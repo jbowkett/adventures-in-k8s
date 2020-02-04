@@ -17,8 +17,10 @@
 
 
 ## Useful Commands
+1. minikube start --vm-driver=virtualbox
 1. minikube kubectl  - if the version of kubectl shipped with Docker is different to minikube's
 1. minikube dashboard &
+1. minikube service hello-node - start a browser to the given service using the correct port and ip address
 1. kubectl create deployment hello-node --image=gcr.io/hello-minikube-zero-install/hello-node --service - creates a service at the same time
 1. kubectl get events
 1. kubectl get deployments - this needs to read 1/1 if the deployment was successful
@@ -40,4 +42,9 @@
 1. kubectl scale deployments/kubernetes-bootcamp --replicas=4   -scale to 4 replicas 
 1. kubectl get pods -o wide
 1. kubectl describe deployments/kubernetes-bootcamp
+1. kubectl cluster-info
+1. source <(kubectl completion zsh)
+1. kubectl get namespaces
+1. kubectl config set-context $(kubectl config current-context) --namespace=testns; kubectl config get-contexts    - change the namespace
+1. kubectl edit deployment examplehttpapp  - opens the current configuration in vim for editing/saving
 
