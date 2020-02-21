@@ -47,4 +47,6 @@
 1. kubectl get namespaces
 1. kubectl config set-context $(kubectl config current-context) --namespace=testns; kubectl config get-contexts    - change the namespace
 1. kubectl edit deployment examplehttpapp  - opens the current configuration in vim for editing/saving
-
+1. kubectl get services -l app=examplehttpapp -o json    - shows the json doc that can be queried in the next command:
+1. curl $(kubectl get services -l app=examplehttpapp -o go-template='{{(index .items 0).spec.clusterIP}}')
+1. kubectl get all 
